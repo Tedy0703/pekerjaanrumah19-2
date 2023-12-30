@@ -1,0 +1,56 @@
+import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import page.LoginPage;
+import page.gantislide;
+import page.negativepage;
+import page.pilihhp;
+import java.io.*;
+import java.lang.Thread;
+
+import java.time.Duration;
+
+public class positivetest extends Thread {
+    By cart = By.xpath("//*[@id='logout2']");
+    @Test
+    @When("positive test berhasil dari login hingga add to cart")
+    public void positiveTestBerhasilDariLoginHinggaAddToCart() throws InterruptedException {
+        WebDriver driver = WebDriverManager.chromedriver().create();
+
+//    HomePage homePage = new HomePage(driver);
+//    LoginPage loginPage = new LoginPage(driver);
+        gantislide Gantislide = new gantislide(driver);
+        pilihhp pilihhp = new pilihhp(driver);
+        LoginPage loginPage = new LoginPage(driver);
+        negativepage Negativepage = new negativepage(driver);
+
+
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        Gantislide.rubahslide();
+        loginPage.userinputusername("coba13");
+        loginPage.userinputpassword("coba23");
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10000));
+        loginPage.klikloginn();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10000));
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10000));
+        pilihhp.menampilkanhp();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10000));
+
+        pilihhp.pilihhpp();
+        Thread.sleep(10000);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10000));
+        driver.findElement(cart).click();
+
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10000));
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6000));
+    }
+}
