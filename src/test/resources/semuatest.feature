@@ -1,6 +1,6 @@
 Feature: semua test
 
-  #login hingga memilih barang ke cart dengan berhasil
+  #login hingga memilih barang ke cart dan pembayaran dengan berhasil
   Scenario: positive test
     Given masuk berada halaman login
     And mengisikan user"coba13"
@@ -8,6 +8,13 @@ Feature: semua test
     Then login
     Then memilih barang untuk ke cart
     Then pilih
+    And input informasi nama"Tedy"
+    And input informasi daerah"indonesia"
+    And input informasi kota"solo"
+    And input nomor kartu"070399"
+    And input bulan"maret"
+    And input tahun"2024"
+    Then pilih purchase
 
   #bisa melakukan pembayaran tanpa ada barang yang dipilih
   Scenario: negativ test
