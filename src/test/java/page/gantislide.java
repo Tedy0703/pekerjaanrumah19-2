@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 public class gantislide {
 
-
+By kliklogin = By.xpath("//*[@id='login2']");
     WebDriver driver;
 
 
@@ -17,6 +17,7 @@ public class gantislide {
     public void rubahslide(){
         driver.get("https://www.demoblaze.com/#carouselExampleIndicators");
         driver.findElement(By.xpath("//*[@id='carouselExampleIndicators']/a[2]/span[1]")).click();
+      driver.findElement(kliklogin).click();
 
     }
 

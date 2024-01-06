@@ -19,7 +19,7 @@ By inputusername = By.xpath("//*[@id='loginusername']");
 //    driver.get("https://jayjay.co/");
     //driver.findElement(By.xpath("//h1[text() = 'Gebrakan Kursus Online yang Siap Meroketkan Kariermu']")).isDisplayed();
     //driver.findElement(By.xpath("/html/body/div[1]/header/div/div/div/div/div[2]/div[2]/a")).click();
-By kliklogin = By.xpath("//*[@id='login2']");
+//By kliklogin = By.xpath("//*[@id='login2']");
     By klikloginn = By.xpath("//*[@id='logInModal']/div/div/div[3]/button[2]");
 
 
@@ -33,7 +33,7 @@ By kliklogin = By.xpath("//*[@id='login2']");
     public void userinputusername(String username){
 
 
-        driver.findElement(kliklogin).click();
+//        driver.findElement(kliklogin).click();
         driver.findElement(inputusername).sendKeys(username);
 
     }

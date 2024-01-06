@@ -35,6 +35,7 @@ public class testpindahhalamandanlogin extends Thread {
     driver.manage().window().maximize();
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     Gantislide.rubahslide();
+    Thread.sleep(500);
     loginPage.userinputusername("coba13");
     loginPage.userinputpassword("coba23");
 
