@@ -13,8 +13,7 @@ on:
   pull_request:
     branches: [ "main" ]
 
-permissions:
-  contents: read
+
 
 jobs:
   build:
@@ -28,7 +27,14 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-    - name: Build with Gradle
-      uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
-      with:
-        arguments: build
+
+
+    - name: Setup Chrome
+      uses: browser-actions/setup-chrome@v1.4.0
+
+          
+    - name: Setup gradlew
+      run: chmod +x gradlew
+
+    - name: Execute Test
+      run: ./gradlew cucumber
