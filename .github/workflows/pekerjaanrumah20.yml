@@ -18,16 +18,20 @@ on:
 
 jobs:
   build:
-
+  
     runs-on: ubuntu-latest
 
+    #download repo
     steps:
     - uses: actions/checkout@v3
+    
+      #setup java
     - name: Set up JDK 11
       with:
         java-version: '11'
         distribution: 'temurin'
 
+    #install browser
     - name: Setup Chrome
       uses: browser-actions/setup-chrome@v1.4.0
  
