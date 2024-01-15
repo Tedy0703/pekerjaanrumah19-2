@@ -39,4 +39,4 @@ jobs:
       run: chmod +x gradlew
 
     - name: Execute Test
-      run: ./gradlew cucumber
+      run: ./gradlew TestSelenium
